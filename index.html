@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="icon" href="public/img/pacman.png">
+        <title>QUIZ</title>
+        <!-- DIVs Pais e Mães estou colocando como id(#) e DIVs filhas como class(.) -->
+        <!-- NÃO ESQUECER DE MUDAR A FONTE -->
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+    </head>
+
+    <body>
+        <video autoplay muted loop id="background-video">
+            <source src="./public/video/videoBackground.mp4" type="video/mp4">
+        </video>
+
+        <div class="container">
+            <img onclick="audioPlay()" id="pacManPlay" class="pacMan" src="./public/img/pacman.png">
+            <img onclick="audioPause()" id="pacManPause" class="pacMan" style="display:none" src="./public/img/pacman.png">
+            <div id="mainBox" class="mainBox">
+                <div id="divInterna">
+                    <div id="menuPrincipal">
+                        <h1>QUIZ GAMER</h1> <!-- Nome do Quizz (Temporário por ora) -->
+                        <h2>Teste seu conhecimento sobre jogos</h2> <!-- Se quiserem mudar, eu mudo 🙂 -->
+                    </div>
+                    <div id="divQuestoes" style="display: none">
+                        <div id="question1" style="display: none">
+                            <div class="headingContainer">
+                                <h1>1 - Quem é esse Pokemón?</h1>                                                          
+                                </div>
+                                <div class="imageContainer">
+                                    <img id="bulbasaurBlack" class="blackBulba" src="./public/img/bulbasaurCensured.gif">
+                                </div>
+                                <div id="question1Options" class="buttonsContainer">
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">Pikachu</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">Snorlax</button>
+                                    <button onClick="questionAnswered(true)" class="optionButton questionButton">Bulbasauro</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">Magikarp</button>
+                            </div>
+                        </div>
+                        <div id="question2" style="display: none">
+                            <div class="headingContainer">
+                                <h1>2 - Qual é a empresa do Megaman?</h1>
+                                </div>
+                                <div class="imageContainer">
+                                    <img id="scorpionMk" src="./public/img/megaman-dance.gif">
+                                </div>
+                                <div id="question2Options" class="buttonsContainer">
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">Nintendo</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">Sega</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">EA Games</button>
+                                    <button onClick="questionAnswered(true)" class="optionButton questionButton">Capcom</button>
+                            </div>
+                        </div>
+                        <div id="question3" style="display: none">
+                            <div class="headingContainer">
+                                <h1>3 - Em que ano o jogo Sonic The Hedgehog foi lançado?</h1>
+                                </div>
+                                <div class="imageContainer">
+                                    <img src="./public/img/sonic.gif">
+                                </div>
+                                <div id="question3Options" class="buttonsContainer">
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">2000</button>
+                                    <button onClick="questionAnswered(true)" class="optionButton questionButton">1991</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">1989</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">1995</button>
+                            </div>
+                        </div>
+                        <div id="question4" style="display: none">
+                            <div class="headingContainer">
+                                <h1>4 - Em Devil May Cry 3, qual o nome do irmão de Dante?</h1>
+                                </div>
+                                <div class="imageContainer">
+                                    <img src="./public/img/devil.gif">
+                                </div>
+                                <div id="question4Options" class="buttonsContainer">
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">Kratos</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">Beelzebub</button>
+                                    <button onClick="questionAnswered(true)" class="optionButton questionButton">Vergil</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">Lucifer</button>
+                            </div>
+                        </div>
+                        <div id="question5" style="display: none">
+                            <div class="headingContainer">
+                                <h1>5 - Qual a data de lançamento do primeiro COD?</h1>
+                                </div>
+                                <div class="imageContainer">
+                                    <img class="ryu" src="./public/img/cod.gif">
+                                </div>
+                                <div id="question5Options" class="buttonsContainer">
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">30 de julho de 2002</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">20 de junho de 2000</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">29 de agosto de 2003</button>
+                                    <button onClick="questionAnswered(true)" class="optionButton questionButton">29 de outubro de 2003</button>
+                            </div>
+                        </div>
+                        <div id="question6" style="display: none">
+                            <div class="headingContainer">
+                                <h1>6 - Quem e este agente do jogo Valorant?</h1>
+                                </div>
+                                <div class="imageContainer">
+                                    <img src="./public/img/fade.gif">
+                                </div>
+                                <div id="question6Options" class="buttonsContainer">
+                                    <button onClick="questionAnswered(true)" class="optionButton questionButton">Fade</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">Reyna</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">Jett</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">Phoenix</button>
+                            </div>
+                        </div>
+                        <div id="question7" style="display: none">
+                            <div class="headingContainer">
+                                <h1>7 - Em Metal Gear Rising: Revengeace existe um personagem brasileiro, seu nome é...</h1>
+                                </div>
+                                <div class="imageContainer2">
+                                    <img class="miranha" src="./public/img/gear.jpg">
+                                </div>
+                                <div id="question7Options" class="buttonsContainer">
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">Manoel Carlos</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">Ronaldinho Gaúcho</button>
+                                    <button onClick="questionAnswered(true)" class="optionButton questionButton">Thiago Paiva Reis</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">Samuel Rodrigues</button>
+                            </div>
+                        </div>
+                        <div id="question8" style="display: none">
+                            <div class="headingContainer">
+                                <h1>8 - Pelo que Dark Souls é conhecido?</h1>
+                                </div>
+                                <div class="imageContainer">
+                                    <img src="./public/img/dark.gif">
+                                </div>
+                                <div id="question8Options" class="buttonsContainer">
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">Ótima Historia</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">Trolagens</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">Gameplay Rápida</button>
+                                    <button onClick="questionAnswered(true)" class="optionButton questionButton">Impossivel de Jogar</button>
+                            </div>
+                        </div>
+                        <div id="question9" style="display: none">
+                            <div class="headingContainer">
+                                <h1>9 - Quantos colossus devemos derrotar em Shadow of the Colossus?</h1>
+                                </div>
+                                <div class="imageContainer2">
+                                    <img class="farcry" src="./public/img/MicrosoftTeams-image (1).png">
+                                </div>
+                                <div id="question9Options" class="buttonsContainer">
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">20</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">69</button>
+                                    <button onClick="questionAnswered(true)" class="optionButton questionButton">16</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">17</button>
+                            </div>
+                        </div>
+                        <div id="question10" style="display: none">
+                            <div class="headingContainer">
+                                <h1>10 - Quem provocou a ira de Scorpion e o fez matar o Sub-Zero?</h1>
+                                </div>
+                                <div class="imageContainer2">
+                                    <img class="speed" src="./public/img/scorpion-sub-zero.gif">
+                                </div>
+                                <div id="question10Options" class="buttonsContainer">
+                                    <button onClick="questionAnswered(true)" class="optionButton questionButton">Quan Chin</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">Shinnok</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">Shao Kahn</button>
+                                    <button onClick="questionAnswered(false)" class="optionButton questionButton">Shang Tsung</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="divQuizFinalizado" style="display: none">
+                        <p>Sua pontuação: ${score}</p>
+                        <br>
+                        <button onclick="reloadPage()" class="optionButton questionButton">Menu Principal</button>
+                    </div>
+                    <div id="divInstrucoes" style="display: none">
+                        <h1>Instruções</h1>
+                        <ol>
+                            <li>Para começar clique em "Começar Quiz".</li>
+                            <li>Para cada resposta correta será contabilizado 1 ponto.</li>
+                            <li>Ao selecionar uma alternativa, aparecerá qual é a 
+                                certa (Verde) e qual é a errada (Vermelha).</li>
+                            <li>Após selecionar uma resposta, você será redirecionado
+                                para a próxima pergunta depois de alguns segundos.</li>
+                            <li>Após o fim do Quiz, clique em "Menu Principal" para voltar a página principal.</li>
+                            <li>Há um Easter-egg no Quiz (É fácil de achar 😉).</li>
+                        </ol>
+                        <button onclick="resetAndGoToMainMenu()" class="optionButton questionButton">Menu Principal</button>
+                    </div>
+                    <div id= "divCreditos" style="display: none">
+                        <h1>Créditos</h1>
+                        <h2 class="groupNames">Integrantes do Grupo:</h2>
+                                <p class="pName"> <a href="https://www.linkedin.com/in/frederico-lopes-566654223/" target="_blank">Frederico Anthony Soares Lopes da Silva</a></p>
+                                <p class="pName"> <a href="https://github.com/henrizin" target="_blank">Henri de Oliveira Lopes</a></p>
+                            
+                        <h2 class= >Instituição:</h2>
+                            <p class="infoUni">Centro Universitário Senac - Campus Santo Amaro</p>
+                        <h2>Professor:</h2>                
+                            <p>Thiago Paiva Reis </p>
+                            <p></p>
+                            <br>
+                            <button onclick="resetAndGoToMainMenu()" class="optionButton questionButton">Menu Principal</button>
+                    </div>
+                </div>
+            </div>
+            <div class="buttonContainer">
+                <button id="startButton" class="optionButton" onClick="increaseMainBox(renderQuestion)">
+                    Começar Quiz
+                </button>
+                <button id="helpButton" class="optionButton" onClick="increaseMainBox(renderInstructions)">
+                    Instruções
+                </button>
+                <button id="creditsButton" class="optionButton" onClick="increaseMainBox(renderCredits)">
+                    Créditos
+                </button>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+
+</html>
